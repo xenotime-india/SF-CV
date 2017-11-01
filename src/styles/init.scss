@@ -77,7 +77,11 @@ $background_color_4: #4679BD;
       left: -15px;
       top: 5px;
     }
-    span {
+    p {
+      margin: 0px;
+      padding: 0px;
+    }
+    strong {
       color: $color_5;
       font-weight: 700;
       a {
@@ -134,6 +138,9 @@ body {
       >div.rating {
         color: $color_2;
         font-size: 20px;
+        .fa {
+          margin: 0px 1.5px;
+        }
       }
     }
     .skill-col + .skill-col {
