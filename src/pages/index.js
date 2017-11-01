@@ -5,18 +5,20 @@ import Header from '../components/Header';
 import Project from '../components/Project';
 import Page1LeftPanel from '../components/Page1LeftPanel';
 import Page2LeftPanel from '../components/Page2LeftPanel';
-import Helmet from 'react-helmet'
+import Helmet from 'react-helmet';
+import Company from '../components/Company';
 
 class BlogIndex extends React.Component {
   render() {
     const site = get(this, 'props.data.site.siteMetadata')
     const posts = get(this, 'props.data.remark.posts')
-    const projects = get(this, 'props.data.projects.files')
+    const appirioProjects = get(this, 'props.data.appirioProjects.files');
+    const metacubeProjects = get(this, 'props.data.metacubeProjects.files');
     const skills = get(this, 'props.data.jsonSkillData.skills')
     const info = get(this, 'props.data.jsonInfoData.infos')
     const certifications = get(this, 'props.data.jsonCertificationsCert.certifications')
 
-    console.log(certifications);
+    console.log(appirioProjects);
     return (
       <div className="wrapper">
         <Helmet
@@ -45,28 +47,11 @@ class BlogIndex extends React.Component {
                   <h2 className=""><span className="icon"><i className="fa fa-briefcase" aria-hidden="true"></i></span><span
                     className="heading-text">Work Experience</span></h2>
                 </div>
-
-                <div className="page-sections">
-
-                  <div className="info-section">
-                    <h5 className="no-bottom-margin sub-heading designation">Principle Consultant</h5>
-                    <h6 className="no-bottom-margin sub-heading-0">Appirio India Private Limited</h6>
-                    <div className="sub-heading-1 block-left">12/2013 – Present</div>
-                    <div className="sub-heading-1 block-right">Jaipur, India</div>
-                    <div className="clear-fix"></div>
-                  </div>
-
-
-                  <ul className="project">
-                    {
-                      projects.map((project, i) => {
-                        return <li key={i} >
-                            <Project {...project.file}/>
-                        </li>;
-                      })
-                    }
-                  </ul>
-                </div>
+                <Company projects={appirioProjects} info={{title: 'Principle Consultant',
+                  name: 'Appirio India Private Limited',
+                  date: '12/2013 – Present',
+                  location: 'Jaipur, India'
+                }}/>
               </div>
             </div>
           </div>
@@ -74,26 +59,37 @@ class BlogIndex extends React.Component {
             <Page2LeftPanel certifications={certifications}/>
             <div className="right-col">
               <div className="resume-main-content">
+
+
+                  <Company projects={metacubeProjects} info={{title: 'Senior Software Engineer',
+                    name: 'Metacube Private Limited',
+                    date: '05/2012 – 12/2013',
+                    location: 'Jaipur, India'
+                  }}/>
+
+                  <Company projects={metacubeProjects} info={{title: 'Senior Software Engineer',
+                    name: 'Metacube Private Limited',
+                    date: '05/2012 – 12/2013',
+                    location: 'Jaipur, India'
+                  }}/>
+
+                <div className="main-heading">
+
+                  <h2 className=""><span className="icon"><i className="fa fa-graduation-cap"
+                                                     aria-hidden="true"></i></span><span
+                    className="heading-text">Education</span></h2>
+                </div>
                 <div className="page-sections">
-
                   <div className="info-section">
-                    <h5 className="no-bottom-margin sub-heading designation">Principle Consultant</h5>
-                    <h6 className="no-bottom-margin sub-heading-0">Appirio India Private Limited</h6>
-                    <div className="sub-heading-1 block-left">12/2013 – Present</div>
-                    <div className="sub-heading-1 block-right">Jaipur, India</div>
-                    <div className="clear-fix"></div>
+                    <h5 className="no-bottom-margin sub-heading designation">Master in Computer Science</h5>
+                    <h6 className="no-bottom-margin sub-heading-0">Punjab Technical University</h6>
                   </div>
-
-
-                  <ul className="project">
-                    {
-                      projects.map((project, i) => {
-                        return <li key={i} >
-                          <Project {...project.file}/>
-                        </li>;
-                      })
-                    }
-                  </ul>
+                </div>
+                <div className="page-sections">
+                  <div className="info-section">
+                    <h5 className="no-bottom-margin sub-heading designation">MS, Information Technology</h5>
+                    <h6 className="no-bottom-margin sub-heading-0">Punjab Technical University</h6>
+                  </div>
                 </div>
               </div>
             </div>
@@ -144,8 +140,25 @@ export const pageQuery = graphql`
         }
       }
     }
-    projects: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(src/docs/projects)//i"}}
+    appirioProjects: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/(src/docs/projects/appirio)//i"}}
+      sort: { order: ASC, fields: [frontmatter___order] }
+    ) {
+      files: edges {
+        file: node {
+          html
+          fileAbsolutePath
+          frontmatter {
+            order
+            url
+            company
+            companySiteUrl
+          }
+        }
+      }
+    }
+    metacubeProjects: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/(src/docs/projects/metacube)//i"}}
       sort: { order: ASC, fields: [frontmatter___order] }
     ) {
       files: edges {

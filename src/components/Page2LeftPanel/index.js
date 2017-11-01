@@ -21,7 +21,7 @@ class Page2LeftPanel extends React.Component {
             <ul>
                 {
                   certifications.map((data, i) => {
-                    return <li key={i}><Certification {...data.certification}/></li>
+                    return data.certification.string ? <li key={i}><Certification {...data.certification}/></li> : null
                   })
                 }
             </ul>
