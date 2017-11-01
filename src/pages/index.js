@@ -14,6 +14,8 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.remark.posts')
     const appirioProjects = get(this, 'props.data.appirioProjects.files');
     const metacubeProjects = get(this, 'props.data.metacubeProjects.files');
+    const xtremeProjects = get(this, 'props.data.xtremeProjects.files');
+    const aptechProjects = get(this, 'props.data.aptechProjects.files');
     const skills = get(this, 'props.data.jsonSkillData.skills')
     const info = get(this, 'props.data.jsonInfoData.infos')
     const certifications = get(this, 'props.data.jsonCertificationsCert.certifications')
@@ -36,7 +38,13 @@ class BlogIndex extends React.Component {
             },
           ]}
         />
+        <div className="bg">
+            <div className="rightSide">
+              <div className="top"></div>
+            </div>
+        </div>
         <div className="container body-container">
+
           <div className="row-container page">
             <Page1LeftPanel skills={skills} infos={info}/>
             <div className="right-col">
@@ -61,17 +69,23 @@ class BlogIndex extends React.Component {
               <div className="resume-main-content">
 
 
-                  <Company projects={metacubeProjects} info={{title: 'Senior Software Engineer',
-                    name: 'Metacube Private Limited',
-                    date: '05/2012 – 12/2013',
-                    location: 'Jaipur, India'
-                  }}/>
+                <Company projects={metacubeProjects} info={{title: 'Senior Software Engineer',
+                  name: 'Metacube Private Limited',
+                  date: '05/2012 – 12/2013',
+                  location: 'Jaipur, India'
+                }}/>
 
-                  <Company projects={metacubeProjects} info={{title: 'Senior Software Engineer',
-                    name: 'Metacube Private Limited',
-                    date: '05/2012 – 12/2013',
-                    location: 'Jaipur, India'
-                  }}/>
+                <Company projects={xtremeProjects} info={{title: 'Senior Software Engineer',
+                  name: 'Xtreme Infosoft Private Limited',
+                  date: '02/2010 – 05/2012',
+                  location: 'Jaipur, India'
+                }}/>
+
+                <Company projects={aptechProjects} info={{title: 'Developer /Corporate Trainer\n',
+                  name: 'Aptech Limited',
+                  date: '04/2008 – 02/2010',
+                  location: 'Alwar, India'
+                }}/>
 
                 <div className="main-heading">
 
@@ -159,6 +173,40 @@ export const pageQuery = graphql`
     }
     metacubeProjects: allMarkdownRemark(
       filter: {fileAbsolutePath: {regex: "/(src/docs/projects/metacube)//i"}}
+      sort: { order: ASC, fields: [frontmatter___order] }
+    ) {
+      files: edges {
+        file: node {
+          html
+          fileAbsolutePath
+          frontmatter {
+            order
+            url
+            company
+            companySiteUrl
+          }
+        }
+      }
+    }
+    xtremeProjects: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/(src/docs/projects/xtreme)//i"}}
+      sort: { order: ASC, fields: [frontmatter___order] }
+    ) {
+      files: edges {
+        file: node {
+          html
+          fileAbsolutePath
+          frontmatter {
+            order
+            url
+            company
+            companySiteUrl
+          }
+        }
+      }
+    }
+    aptechProjects: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/(src/docs/projects/aptech)//i"}}
       sort: { order: ASC, fields: [frontmatter___order] }
     ) {
       files: edges {
