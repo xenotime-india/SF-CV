@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'CV_SANDEEP_KUMAR',
     description: 'Ready to print resume.',
-    url: 'https://xenotime-india.github.io/xenotime-rs',
+    url: 'https://xenotime-india.github.io/CV',
     author: 'Xenotime',
     twitter: 'xenotime-india',
   },
@@ -46,15 +46,7 @@ module.exports = {
         ],
       },
     },
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sass',
-    'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: ``,
-      },
-    },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     `gatsby-transformer-json`,

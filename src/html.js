@@ -1,10 +1,29 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+let stylesStr
+if (process.env.NODE_ENV === 'production') {
+  try {
+    stylesStr = require('!raw-loader!../public/styles.css')
+  } catch (e) {
+    console.log(e)
+  }
+}
 
 export default class HTML extends React.Component {
   render() {
-    const head = Helmet.rewind()
+    const head = Helmet.rewind();
+    const pathPrefix =
+      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__;
+    let css;
+    if (process.env.NODE_ENV === 'production') {
+      css = (
+        <style
+          id="gatsby-inlined-css"
+          dangerouslySetInnerHTML={{ __html: stylesStr }}
+        />
+      )
+    }
     return (
       <html lang="en">
         <head>
@@ -15,7 +34,8 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           {this.props.headComponents}
-          <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
+          {css}
+          <link href={pathPrefix + "/img/favicon.ico"} rel="icon" type="image/x-icon" />
         </head>
         <body>
           <div
