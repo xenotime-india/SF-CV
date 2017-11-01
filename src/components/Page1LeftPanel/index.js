@@ -3,7 +3,7 @@ import './style.scss';
 import Rating from './../Rating';
 import Info from './../Info';
 
-class LeftPanel extends React.Component {
+class Page1LeftPanel extends React.Component {
 
   render() {
     const { skills, infos } = this.props;
@@ -45,4 +45,4 @@ class LeftPanel extends React.Component {
   }
 }
 
-export default LeftPanel
+export default Page1LeftPanel
