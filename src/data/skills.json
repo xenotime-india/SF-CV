@@ -1,0 +1,46 @@
+[
+  {
+    "rating": 4,
+    "skillName": "Salesforce"
+  },
+  {
+    "rating": 4,
+    "skillName": "Node.js (Express., Hapi)"
+  },
+  {
+    "rating": 3,
+    "skillName": "Cordova, Ionic"
+  },
+  {
+    "rating": 4,
+    "skillName": "React, React Native"
+  },
+  {
+    "rating": 2,
+    "skillName": "Angular 1.0/2.0"
+  },
+  {
+    "rating": 4,
+    "skillName": "Gulp, Promise, Async"
+  },
+  {
+    "rating": 4,
+    "skillName": "Heroku, IBM bluemix, AWS"
+  },
+  {
+    "rating": 3,
+    "skillName": "Java, Play, Struct"
+  },
+  {
+    "rating": 2,
+    "skillName": "Swift - iOS"
+  },
+  {
+    "rating": 4,
+    "skillName": "PostgreSQL, Mongodb"
+  },
+  {
+    "rating": 4,
+    "skillName": "Continuous Integration"
+  }
+]

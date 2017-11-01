@@ -1,0 +1,32 @@
+[
+  {
+    "string": "sandeepkhoj@gmail.com",
+    "type": "email",
+    "link": "mailto:sandeepkhoj@gmail.com",
+    "icon": "fa-envelope"
+  },
+  {
+    "string": "+91-9261231405",
+    "type": "mobile",
+    "link": "tel:+91-9261231405",
+    "icon": "fa-mobile"
+  },
+  {
+    "string": "Jaipur, India",
+    "type": "location",
+    "link": "http://maps.google.com/?q=Jaipur,+Rajasthan,+India",
+    "icon": "fa-map-marker"
+  },
+  {
+    "string": "www.linkedin.com/in/xenotime",
+    "type": "linkedin",
+    "link": "https://www.linkedin.com/in/xenotime",
+    "icon": "fa-linkedin-square"
+  },
+  {
+    "string": "github.com/xenotime-india",
+    "type": "github",
+    "link": "https://github.com/xenotime-india",
+    "icon": "fa-github"
+  }
+]
