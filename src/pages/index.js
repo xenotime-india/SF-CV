@@ -11,7 +11,6 @@ import Company from '../components/Company';
 class BlogIndex extends React.Component {
   render() {
     const site = get(this, 'props.data.site.siteMetadata')
-    const posts = get(this, 'props.data.remark.posts')
     const appirioProjects = get(this, 'props.data.appirioProjects.files');
     const metacubeProjects = get(this, 'props.data.metacubeProjects.files');
     const xtremeProjects = get(this, 'props.data.xtremeProjects.files');
@@ -20,7 +19,6 @@ class BlogIndex extends React.Component {
     const info = get(this, 'props.data.jsonInfoData.infos')
     const certifications = get(this, 'props.data.jsonCertificationsCert.certifications')
 
-    console.log(appirioProjects);
     return (
       <div className="wrapper">
         <Helmet
