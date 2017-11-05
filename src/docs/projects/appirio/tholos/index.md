@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 8
 name: Tholos
 url: "https://www.lids.com/"
 company: Kimberly Clark
