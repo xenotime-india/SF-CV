@@ -1,23 +1,26 @@
 import React from 'react'
 import get from 'lodash/get'
 
-import Header from '../components/Header';
-import Project from '../components/Project';
-import Page1LeftPanel from '../components/Page1LeftPanel';
-import Page2LeftPanel from '../components/Page2LeftPanel';
-import Helmet from 'react-helmet';
-import Company from '../components/Company';
+import Header from '../components/Header'
+import Project from '../components/Project'
+import Page1LeftPanel from '../components/Page1LeftPanel'
+import Page2LeftPanel from '../components/Page2LeftPanel'
+import Helmet from 'react-helmet'
+import Company from '../components/Company'
 
 class BlogIndex extends React.Component {
   render() {
     const site = get(this, 'props.data.site.siteMetadata')
-    const appirioProjects = get(this, 'props.data.appirioProjects.files');
-    const metacubeProjects = get(this, 'props.data.metacubeProjects.files');
-    const xtremeProjects = get(this, 'props.data.xtremeProjects.files');
-    const aptechProjects = get(this, 'props.data.aptechProjects.files');
+    const appirioProjects = get(this, 'props.data.appirioProjects.files')
+    const metacubeProjects = get(this, 'props.data.metacubeProjects.files')
+    const xtremeProjects = get(this, 'props.data.xtremeProjects.files')
+    const aptechProjects = get(this, 'props.data.aptechProjects.files')
     const skills = get(this, 'props.data.jsonSkillData.skills')
     const info = get(this, 'props.data.jsonInfoData.infos')
-    const certifications = get(this, 'props.data.jsonCertificationsCert.certifications')
+    const certifications = get(
+      this,
+      'props.data.jsonCertificationsCert.certifications'
+    )
 
     return (
       <div className="wrapper">
@@ -37,70 +40,94 @@ class BlogIndex extends React.Component {
           ]}
         />
         <div className="bg">
-            <div className="rightSide">
-              <div className="top"></div>
-            </div>
+          <div className="top" />
         </div>
         <div className="container body-container">
-
           <div className="row-container page">
-            <Page1LeftPanel skills={skills} infos={info}/>
+            <Page1LeftPanel skills={skills} infos={info} />
             <div className="right-col">
-              <Header/>
+              <Header />
               <div className="resume-main-content">
                 <div className="main-heading">
-
-                  <h2 className=""><span className="icon"><i className="fa fa-briefcase" aria-hidden="true"></i></span><span
-                    className="heading-text">Work Experience</span></h2>
+                  <h2 className="">
+                    <span className="icon">
+                      <i className="fa fa-briefcase" aria-hidden="true" />
+                    </span>
+                    <span className="heading-text">Work Experience</span>
+                  </h2>
                 </div>
-                <Company projects={appirioProjects} info={{title: 'Principle Consultant',
-                  name: 'Appirio India Private Limited',
-                  date: '12/2013 – Present',
-                  location: 'Jaipur, India'
-                }}/>
+                <Company
+                  projects={appirioProjects}
+                  info={{
+                    title: 'Principle Consultant',
+                    name: 'Appirio India Private Limited',
+                    date: '12/2013 – Present',
+                    location: 'Jaipur, India',
+                  }}
+                />
               </div>
             </div>
           </div>
           <div className="row-container page">
-            <Page2LeftPanel certifications={certifications}/>
+            <Page2LeftPanel certifications={certifications} />
             <div className="right-col">
               <div className="resume-main-content">
+                <Company
+                  projects={metacubeProjects}
+                  info={{
+                    title: 'Senior Software Engineer',
+                    name: 'Metacube Private Limited',
+                    date: '05/2012 – 12/2013',
+                    location: 'Jaipur, India',
+                  }}
+                />
 
+                <Company
+                  projects={xtremeProjects}
+                  info={{
+                    title: 'Senior Software Engineer',
+                    name: 'Xtreme Infosoft Private Limited',
+                    date: '02/2010 – 05/2012',
+                    location: 'Jaipur, India',
+                  }}
+                />
 
-                <Company projects={metacubeProjects} info={{title: 'Senior Software Engineer',
-                  name: 'Metacube Private Limited',
-                  date: '05/2012 – 12/2013',
-                  location: 'Jaipur, India'
-                }}/>
-
-                <Company projects={xtremeProjects} info={{title: 'Senior Software Engineer',
-                  name: 'Xtreme Infosoft Private Limited',
-                  date: '02/2010 – 05/2012',
-                  location: 'Jaipur, India'
-                }}/>
-
-                <Company projects={aptechProjects} info={{title: 'Developer /Corporate Trainer\n',
-                  name: 'Aptech Limited',
-                  date: '04/2008 – 02/2010',
-                  location: 'Alwar, India'
-                }}/>
+                <Company
+                  projects={aptechProjects}
+                  info={{
+                    title: 'Developer /Corporate Trainer\n',
+                    name: 'Aptech Limited',
+                    date: '04/2008 – 02/2010',
+                    location: 'Alwar, India',
+                  }}
+                />
 
                 <div className="main-heading">
-
-                  <h2 className=""><span className="icon"><i className="fa fa-graduation-cap"
-                                                     aria-hidden="true"></i></span><span
-                    className="heading-text">Education</span></h2>
+                  <h2 className="">
+                    <span className="icon">
+                      <i className="fa fa-graduation-cap" aria-hidden="true" />
+                    </span>
+                    <span className="heading-text">Education</span>
+                  </h2>
                 </div>
                 <div className="page-sections">
                   <div className="info-section">
-                    <h5 className="no-bottom-margin sub-heading designation">Master in Computer Science</h5>
-                    <h6 className="no-bottom-margin sub-heading-0">Punjab Technical University</h6>
+                    <h5 className="no-bottom-margin sub-heading designation">
+                      Master in Computer Science
+                    </h5>
+                    <h6 className="no-bottom-margin sub-heading-0">
+                      Punjab Technical University
+                    </h6>
                   </div>
                 </div>
                 <div className="page-sections">
                   <div className="info-section">
-                    <h5 className="no-bottom-margin sub-heading designation">MS, Information Technology</h5>
-                    <h6 className="no-bottom-margin sub-heading-0">Punjab Technical University</h6>
+                    <h5 className="no-bottom-margin sub-heading designation">
+                      MS, Information Technology
+                    </h5>
+                    <h6 className="no-bottom-margin sub-heading-0">
+                      Punjab Technical University
+                    </h6>
                   </div>
                 </div>
               </div>
@@ -126,16 +153,16 @@ export const pageQuery = graphql`
       }
     }
     jsonSkillData: allSkillsJson {
-      skills:edges {
-        skill:node {
+      skills: edges {
+        skill: node {
           rating
           skillName
         }
       }
     }
     jsonInfoData: allInfoJson {
-      infos:edges {
-        info:node {
+      infos: edges {
+        info: node {
           string
           type
           link
@@ -144,8 +171,8 @@ export const pageQuery = graphql`
       }
     }
     jsonCertificationsCert: allCertificationsJson {
-      certifications:edges {
-        certification:node {
+      certifications: edges {
+        certification: node {
           string
           link
           icon
@@ -153,7 +180,7 @@ export const pageQuery = graphql`
       }
     }
     appirioProjects: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(src/docs/projects/appirio)//i"}}
+      filter: { fileAbsolutePath: { regex: "/(src/docs/projects/appirio)//i" } }
       sort: { order: ASC, fields: [frontmatter___order] }
     ) {
       files: edges {
@@ -170,7 +197,9 @@ export const pageQuery = graphql`
       }
     }
     metacubeProjects: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(src/docs/projects/metacube)//i"}}
+      filter: {
+        fileAbsolutePath: { regex: "/(src/docs/projects/metacube)//i" }
+      }
       sort: { order: ASC, fields: [frontmatter___order] }
     ) {
       files: edges {
@@ -187,7 +216,7 @@ export const pageQuery = graphql`
       }
     }
     xtremeProjects: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(src/docs/projects/xtreme)//i"}}
+      filter: { fileAbsolutePath: { regex: "/(src/docs/projects/xtreme)//i" } }
       sort: { order: ASC, fields: [frontmatter___order] }
     ) {
       files: edges {
@@ -204,7 +233,7 @@ export const pageQuery = graphql`
       }
     }
     aptechProjects: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(src/docs/projects/aptech)//i"}}
+      filter: { fileAbsolutePath: { regex: "/(src/docs/projects/aptech)//i" } }
       sort: { order: ASC, fields: [frontmatter___order] }
     ) {
       files: edges {

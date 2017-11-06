@@ -2,16 +2,26 @@
 @import './skeleton.scss';
 
 $color_1: #fff;
-$color_2: #4679BD;
+$color_2: #4679bd;
 $color_3: #222;
 $color_4: #000;
 $color_5: #5d6167;
 $font_family_1: Catamaran, sans-serif;
 $font_family_2: fontAwesome;
 $background_color_1: #fff;
-$background_color_2: #E9E7E8;
+$background_color_2: #e9e7e8;
 $background_color_3: #5d6167;
-$background_color_4: #4679BD;
+$background_color_4: #4679bd;
+
+.bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  .top {
+    background-color: #5d6167;
+    height: 208px;
+  }
+}
 
 .no-bottom-margin {
   margin-bottom: 0;
@@ -25,7 +35,7 @@ $background_color_4: #4679BD;
   ul {
     list-style: none;
     li {
-      font-size: .9em;
+      font-size: 0.9em;
       font-weight: 400;
       word-break: break-all;
       padding: 6px 0;
@@ -69,7 +79,7 @@ $background_color_4: #4679BD;
     list-style: none;
     position: relative;
     &:before {
-      content: "\f111 ";
+      content: '\f111 ';
       font-family: $font_family_2;
       font-size: 7px;
       color: $color_5;
@@ -97,8 +107,8 @@ body {
 }
 .body-container {
   width: 935px;
-  -webkit-box-shadow: -2px 11px 62px 9px #c7c7c7;
-  box-shadow: -2px 11px 62px 9px #c7c7c7;
+  //-webkit-box-shadow: -2px 11px 62px 9px #c7c7c7;
+  //box-shadow: -2px 11px 62px 9px #c7c7c7;
   .row-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -106,7 +116,8 @@ body {
     background-color: $background_color_1;
   }
 }
-.fa-circle, .fa-circle-thin {
+.fa-circle,
+.fa-circle-thin {
   font-size: 35px;
 }
 .left-col {
@@ -130,12 +141,12 @@ body {
   .skill-container {
     margin-top: 30px;
     .skill-col {
-      >div {
+      > div {
         color: $color_3;
         font-weight: 500;
         font-size: 14px;
       }
-      >div.rating {
+      > div.rating {
         color: $color_2;
         font-size: 20px;
         .fa {
@@ -186,7 +197,7 @@ ul {
   height: 0;
   border-radius: 50%;
   padding-bottom: 85%;
-  border: 2px solid #4679BD;
+  border: 2px solid #4679bd;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -195,15 +206,15 @@ ul {
   height: 0;
   border-radius: 50%;
   padding-bottom: 100%;
-  background: #4679BD;
+  background: #4679bd;
 }
 .col-group {
   overflow: hidden;
-  >div {
+  > div {
     padding: 2%;
     width: 16%;
     float: left;
-    &:nth-child(3n+1) {
+    &:nth-child(3n + 1) {
       clear: none;
     }
     &:nth-child(odd) {
@@ -238,7 +249,7 @@ ul {
     position: relative;
     z-index: 99;
     &:after {
-      content: "";
+      content: '';
       background: #ccc;
       height: 2px;
       display: block;
@@ -291,9 +302,13 @@ ul {
   margin: 0;
 }
 @media print {
-  html, body {
+  html,
+  body {
     width: 210mm;
     height: 297mm;
+  }
+  .bg {
+    display: none;
   }
   .page {
     page-break-after: always;
