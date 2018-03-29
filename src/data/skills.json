@@ -1,10 +1,6 @@
 [
   {
     "rating": 4,
-    "skillName": "Salesforce"
-  },
-  {
-    "rating": 4,
     "skillName": "Node.js (Express., Hapi)"
   },
   {
@@ -14,6 +10,10 @@
   {
     "rating": 4,
     "skillName": "React, React Native"
+  },
+  {
+    "rating": 4,
+    "skillName": "Salesforce"
   },
   {
     "rating": 2,
