@@ -59,7 +59,7 @@ class BlogIndex extends React.Component {
                 <Company
                   projects={appirioProjects}
                   info={{
-                    title: 'Principle Consultant',
+                    title: 'Technical Architect | Principle Consultant',
                     name: 'Appirio India Private Limited',
                     date: '12/2013 – Present',
                     location: 'Jaipur, India',
